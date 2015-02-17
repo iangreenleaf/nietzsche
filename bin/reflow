@@ -1,0 +1,12 @@
+#!/bin/bash
+
+tmpfile=$(mktemp)
+
+for f in "$@"; do
+  cat "$f" | \
+    awk '/^[^%]/ {print} ; /^%$/ {print ""; print; print ""}' | \
+    fmt | \
+    awk 'BEGIN {RS = "\n\n%\n\n"} ; {print; print "%"}' \
+    > "$tmpfile"
+  cp "$tmpfile" "$f"
+done
