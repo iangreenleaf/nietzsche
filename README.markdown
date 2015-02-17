@@ -39,4 +39,4 @@ All works in `src` were originally made available under public domain.
 Some of the works were graciously provided by [Project Gutenberg](http://www.gutenberg.org).
 
 All contents of this project are made available under the WTFPL.
-See COPYING for more information.
+See [COPYING](./COPYING) for more information.
